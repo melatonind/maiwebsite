@@ -1,0 +1,256 @@
+/* 
+    Starry Night DEMO
+    chriscoyier@gmail.com
+    http://chriscoyier.net
+*/
+
+
+/* Font Import */
+
+body {
+	-webkit-font-smoothing: antialiased;
+	background-color: #F7F7F7;
+	font-size: 15px;
+}
+
+
+/***
+Page header
+***/
+
+.container {
+	margin-top: 30px;
+}
+
+.meLogo {
+	margin-top: 20px;
+	margin-left: 20px;
+	text-align: center;
+}
+
+#circle {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+#circle:before,
+#circle:after {
+    position: absolute;
+    content: "";
+    left: 70px;
+    top: 0px;
+    width: 40px;
+    height: 0px;
+    background: red;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(180deg);
+       -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+         -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+         -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+	z-index: -1;
+	transition: all 0.5s ease;
+}
+
+.navbar {
+	background-color: transparent;
+	border: 0;
+}
+.navbar-brand, .navbar-brand a {
+	font-family: "Courier New";
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.navbar a {
+	color: black;
+	border-bottom: 4px solid transparent;
+	border-top: 4px solid transparent;
+	transition: all 0.5s ease;
+}
+
+
+.navbar a:hover, .navbar li a:hover {
+	color: #e30000;
+	border-bottom: 4px solid #e30000;
+	background-color: transparent;
+}
+
+
+
+@-webkit-keyframes STAR-MOVE {
+	from {
+		background-position: 5% 5%
+	}
+	to { 
+		background-position: 1300% 600%
+	}
+}
+
+#background {
+  /* fallback */
+  background-color: #6ecaff; 
+  background: url(images/linear_bg_2.png);
+  background-repeat: repeat-x;
+
+  /* Safari 4-5, Chrome 1-9 */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d7eeff), to(#6ecaff));
+
+  /* Safari 5.1, Chrome 10+ */
+  background: -webkit-linear-gradient(top, #6ecaff, #22aeff);
+
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(top, #d7eeff, #6ecaff);
+
+  /* IE 10 */
+  background: -ms-linear-gradient(top, #d7eeff, #6ecaff);
+
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #d7eeff, #6ecaff);
+
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 100;
+}
+
+#midground {
+	background: url(../images/midground.png) repeat 20% 20%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 200;
+	
+	-webkit-animation-name: STAR-MOVE;
+	-webkit-animation-duration: 150s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#foreground {
+	background: url(../images/foreground.png) repeat 35% 35%;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 300;
+	
+	-webkit-animation-name: STAR-MOVE;
+	-webkit-animation-duration: 100s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+
+#page-wrap {
+	position: absolute;
+	z-index: 300;
+	top:0; left:0; bottom:0; right:0;
+	margin: auto;
+	vertical-align: middle;
+}
+
+h1 {
+	font-size: 100px;
+	font-family:"Courier New";
+	margin-bottom: 30px;
+	margin-top: 50px;
+}
+
+.bubble 
+{
+vertical-align: middle;
+position: relative;
+width: 250px;
+height: 110px;
+margin: 20 0 20 0;
+background: #FFFFFF;
+-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+border: #7F7F7F solid 4px;
+}
+
+.bubble:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 15px 0 15px 15px;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+right: -15px;
+top: 58px;
+}
+
+.bubble:before 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 18px 0 18px 18px;
+border-color: transparent #7F7F7F;
+display: block;
+width: 0;
+z-index: 0;
+right: -22px;
+top: 55px;
+}
+
+.bubbleLeft
+{
+line-height: 110px;
+position: relative;
+width: 250px;
+height: 110px;
+margin: 20 0 20 0;
+background: #FFFFFF;
+-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+border: #7F7F7F solid 4px;
+}
+
+.bubbleLeft:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 15px 15px 15px 0;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+left: -15px;
+top: 58px;
+}
+
+.bubbleLeft:before 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 18px 18px 18px 0;
+border-color: transparent #7F7F7F;
+display: block;
+width: 0;
+z-index: 0;
+left: -22px;
+top: 55px;
+}
+
+.hi {
+	font-size: 30px;
+	padding: 10;
+	font-family: "Courier New";
+}
+
+#me {
+	background-color: black;
+	color: white;
+	
+}
+
