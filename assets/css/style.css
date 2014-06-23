@@ -10,7 +10,13 @@
 body {
 	-webkit-font-smoothing: antialiased;
 	background-color: #F7F7F7;
-	font-size: 15px;
+	font-size: 17px;
+	font-family: 'Comfortaa', cursive;
+	background: 
+radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) 0 -50px;
+background-color: #e2e2e2;
+  background-size:75px 100px;
 }
 
 
@@ -18,21 +24,19 @@ body {
 Page header
 ***/
 
-.container {
-	margin-top: 30px;
+.container.main{
+	margin-top: 50px;
 }
 
 .meLogo {
 	margin-top: 20px;
 	margin-left: 20px;
-	text-align: center;
 }
 
 #circle {
     position: relative;
-    width: 100px;
-    height: 90px;
 }
+
 #circle:before,
 #circle:after {
     position: absolute;
@@ -41,7 +45,7 @@ Page header
     top: 0px;
     width: 40px;
     height: 0px;
-    background: red;
+    background: #e30000;
     -moz-border-radius: 50px 50px 0 0;
     border-radius: 50px 50px 0 0;
     -webkit-transform: rotate(180deg);
@@ -55,17 +59,12 @@ Page header
          -o-transform-origin: 0 100%;
             transform-origin: 0 100%;
 	z-index: -1;
-	transition: all 0.5s ease;
+	transition: all 0.3s ease;
 }
 
 .navbar {
 	background-color: transparent;
 	border: 0;
-}
-.navbar-brand, .navbar-brand a {
-	font-family: "Courier New";
-	font-size: 20px;
-	font-weight: bold;
 }
 
 .navbar a {
@@ -73,16 +72,25 @@ Page header
 	border-bottom: 4px solid transparent;
 	border-top: 4px solid transparent;
 	transition: all 0.5s ease;
+	font-family: 'Fredoka One', cursive;
 }
-
 
 .navbar a:hover, .navbar li a:hover {
 	color: #e30000;
-	border-bottom: 4px solid #e30000;
+	border-top: 4px solid transparent;
 	background-color: transparent;
 }
 
+.navbar-collapse.collapse.in, .navbar-collapse.collapseing {
+	background-color: #F7F7F7;
+	transition: all 0.2s ease;
+	background:rgba(247,247,247,0.5);
+	border: transparent;
+}
 
+.icon-bar {
+	background-color: black;
+}
 
 @-webkit-keyframes STAR-MOVE {
 	from {
@@ -91,6 +99,136 @@ Page header
 	to { 
 		background-position: 1300% 600%
 	}
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Fredoka One', cursive;
+	margin-bottom: 30px;
+	margin-top: 50px;
+	z-index: 300;
+}
+
+h1 {
+	font-size: 100px;
+}
+
+.bubble 
+{
+padding: 30px;
+vertical-align: middle;
+position: relative;
+margin: 20 0 20 0;
+background: #FFFFFF;
+-webkit-border-radius: 25px;
+   -moz-border-radius: 25px;
+        border-radius: 25px;
+border: #7F7F7F solid 4px;
+}
+
+.bubble:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 15px 0 15px 15px;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+right: -15px;
+top: 58px;
+}
+
+.bubble:before 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 18px 0 18px 18px;
+border-color: transparent #7F7F7F;
+display: block;
+width: 0;
+z-index: 0;
+right: -22px;
+top: 55px;
+}
+
+.bubbleLeft
+{
+padding: 30px;
+position: relative;
+margin: 20 0 20 0;
+background: #FFFFFF;
+-webkit-border-radius: 25px;
+   -moz-border-radius: 25px;
+        border-radius: 25px;
+border: #7F7F7F solid 4px;
+}
+
+.bubbleLeft:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 15px 15px 15px 0;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+left: -15px;
+top: 58px;
+}
+
+.bubbleLeft:before 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 18px 18px 18px 0;
+border-color: transparent #7F7F7F;
+display: block;
+width: 0;
+z-index: 0;
+left: -22px;
+top: 55px;
+}
+
+.blog-button {
+	padding-top: 20px;
+	text-align: center;
+}
+
+.form-control {
+	font-size: 20px;
+	background-color: transparent;
+	/*background:rgba(247,247,247,0.5);*/
+	background:rgba(255,255,255,0.7);
+	border: #7F7F7F solid 4px;
+	-webkit-border-radius: 25px;
+       -moz-border-radius: 25px;
+            border-radius: 25px;
+	min-height: 80px;
+	padding: 30px;
+}
+
+.btn {
+	border: #7F7F7F solid 4px;
+	-webkit-border-radius: 25px;
+       -moz-border-radius: 25px;
+            border-radius: 25px;
+	padding: 15px;
+}
+
+/*
+
+#page-wrap {
+	position: absolute;
+	z-index: 300;
+	top:0; left:0; bottom:0; right:0;
+	margin: auto;
+	vertical-align: middle;
 }
 
 #background {
@@ -141,116 +279,4 @@ Page header
 	-webkit-animation-duration: 100s;
 	-webkit-animation-timing-function: linear;
 	-webkit-animation-iteration-count: infinite;
-}
-
-#page-wrap {
-	position: absolute;
-	z-index: 300;
-	top:0; left:0; bottom:0; right:0;
-	margin: auto;
-	vertical-align: middle;
-}
-
-h1 {
-	font-size: 100px;
-	font-family:"Courier New";
-	margin-bottom: 30px;
-	margin-top: 50px;
-}
-
-.bubble 
-{
-vertical-align: middle;
-position: relative;
-width: 250px;
-height: 110px;
-margin: 20 0 20 0;
-background: #FFFFFF;
--webkit-border-radius: 0px;
--moz-border-radius: 0px;
-border-radius: 0px;
-border: #7F7F7F solid 4px;
-}
-
-.bubble:after 
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 15px 0 15px 15px;
-border-color: transparent #FFFFFF;
-display: block;
-width: 0;
-z-index: 1;
-right: -15px;
-top: 58px;
-}
-
-.bubble:before 
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 18px 0 18px 18px;
-border-color: transparent #7F7F7F;
-display: block;
-width: 0;
-z-index: 0;
-right: -22px;
-top: 55px;
-}
-
-.bubbleLeft
-{
-line-height: 110px;
-position: relative;
-width: 250px;
-height: 110px;
-margin: 20 0 20 0;
-background: #FFFFFF;
--webkit-border-radius: 0px;
--moz-border-radius: 0px;
-border-radius: 0px;
-border: #7F7F7F solid 4px;
-}
-
-.bubbleLeft:after 
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 15px 15px 15px 0;
-border-color: transparent #FFFFFF;
-display: block;
-width: 0;
-z-index: 1;
-left: -15px;
-top: 58px;
-}
-
-.bubbleLeft:before 
-{
-content: '';
-position: absolute;
-border-style: solid;
-border-width: 18px 18px 18px 0;
-border-color: transparent #7F7F7F;
-display: block;
-width: 0;
-z-index: 0;
-left: -22px;
-top: 55px;
-}
-
-.hi {
-	font-size: 30px;
-	padding: 10;
-	font-family: "Courier New";
-}
-
-#me {
-	background-color: black;
-	color: white;
-	
-}
-
+}*/
