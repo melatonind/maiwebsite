@@ -127,7 +127,7 @@ a:hover {
 padding: 30px;
 vertical-align: middle;
 position: relative;
-margin: 20 0 20 0;
+margin: 20px 0 20px 0;
 background: #FFFFFF;
 -webkit-border-radius: 25px;
    -moz-border-radius: 25px;
@@ -248,68 +248,33 @@ top: 55px;
 }
 
 .footer {
-	background-color: #ccc;
+	background-color: #333;
 	color: white;
 	padding-top: 20px;
 	padding-bottom: 50px;
+	margin-top: 40px;
 }
 
-/*
-
-#page-wrap {
-	position: absolute;
-	z-index: 300;
-	top:0; left:0; bottom:0; right:0;
-	margin: auto;
+td {
+	height: 100px;
 	vertical-align: middle;
+	text-align: center;
 }
 
-#background {
-  /* fallback */
-  background-color: #6ecaff; 
-  background: url(images/linear_bg_2.png);
-  background-repeat: repeat-x;
-
-  /* Safari 4-5, Chrome 1-9 */
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d7eeff), to(#6ecaff));
-
-  /* Safari 5.1, Chrome 10+ */
-  background: -webkit-linear-gradient(top, #6ecaff, #22aeff);
-
-  /* Firefox 3.6+ */
-  background: -moz-linear-gradient(top, #d7eeff, #6ecaff);
-
-  /* IE 10 */
-  background: -ms-linear-gradient(top, #d7eeff, #6ecaff);
-
-  /* Opera 11.10+ */
-  background: -o-linear-gradient(top, #d7eeff, #6ecaff);
-
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	z-index: 100;
+th {
+	font-size: 20px;
+	vertical-align: middle;
+	text-align: center;
 }
 
-#midground {
-	background: url(../images/midground.png) repeat 20% 20%;
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	z-index: 200;
-	
-	-webkit-animation-name: STAR-MOVE;
-	-webkit-animation-duration: 150s;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
-}
-
-#foreground {
-	background: url(../images/foreground.png) repeat 35% 35%;
-	position: absolute;
-	top: 0; left: 0; right: 0; bottom: 0;
-	z-index: 300;
-	
-	-webkit-animation-name: STAR-MOVE;
-	-webkit-animation-duration: 100s;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
-}*/
+.badge
+    {
+    width:100px;
+    height:100px;
+    border-radius:50px;
+    font-size:22px;
+    color:#fff;
+    line-height:100px;
+    text-align:center;
+    background:#333;
+    }

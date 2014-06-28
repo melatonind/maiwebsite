@@ -7,10 +7,54 @@
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Fredoka+One|Comfortaa:400,300,700' rel='stylesheet' type='text/css'>
 	
-	
 	<script src="assets/javascript/jquery.min.js"></script>
 	<script src="assets/javascript/bootstrap.min.js" /></script>
 	<script src="assets/javascript/index.js" /></script>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	
+    <script>
+		
+     var map;
+		function initialize() {
+			map = new google.maps.Map(document.getElementById('map_canvas'), {
+			zoom: 4,
+			center: new google.maps.LatLng(-27.429332, 153.027579),
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		});
+
+        var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+        var icons = {
+		  mei: {
+            name: 'Mei',
+            icon: 'assets/images/meOnAMap.gif'
+          }
+        };
+
+        function addMarker(feature) {
+          var marker = new google.maps.Marker({
+            position: feature.position,
+            icon: icons[feature.type].icon,
+            map: map,
+			optimized: false
+          });
+        }
+
+        var features = [
+          {
+            position: new google.maps.LatLng(-27.429332, 153.027579),
+            type: 'mei'
+          }
+        ];
+
+        for (var i = 0, feature; feature = features[i]; i++) {
+          addMarker(feature);
+        }
+ 
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    
+    </script>
 	
 </head>
 
@@ -56,7 +100,7 @@
 						Hi,<br>I'm <b>Mei</b>.
 					</div><br>
 					<div class="bubble pull-right">
-						I currently am completing a dual degree at Queensland University of Technology in:
+						I'm currently completing a dual degree at Queensland University of Technology in:
 						<br>
 						<ul>
 							<li>IT (Software Engineering)</li>
@@ -73,7 +117,7 @@
 					<div class="bubbleLeft pull-left">
 						I like to make things, check them out in my blog:
 						<br>
-						<div class="blog-button"><a href="" class="btn btn-primary btn-lg">Beep Boop</div></a>
+						<div class="blog-button"><a href="http://www.beepboop.com.au" class="btn btn-primary btn-lg" target="_blank">Beep Boop</div></a>
 					</div>
 				</div>
 			</div>
@@ -100,13 +144,13 @@
 					<a href="mailto:mei.broughsmyth@gmail.com" target="_blank"><i class="fa fa-envelope fa-5x"></i><br>e-mail</a>
 				</div>
 				<div class="col-sm-2 text-center">
-					<a href="" target="_blank"><i class="fa fa-paper-plane fa-5x"></i><br>Contact me</a>
+					<a href="#contact"><i class="fa fa-paper-plane fa-5x"></i><br>Contact me</a>
 				</div>
 			</div>
 		</div>
 	</div>
 	
-	<div class="container">
+	<div class="container" id="contact">
 		<form role="form">
 		<div class="row">
 			<h2>Message me</h2>
@@ -146,16 +190,17 @@
 		</div>
 
 		<div class="row text-center">
-			<div class="mappu">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14868796.664254982!2d151.72157921861515!3d-24.51740710500903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b91579aac93d233%3A0x402a35af3deaf40!2sBrisbane+QLD!5e0!3m2!1sen!2sau!4v1403592494015" width="100%" height="450" frameborder="1" class="map"></iframe>
-			</div>
+			<div id="map_canvas"></div>
 		</div>
-		
 	</div>
-
+	
+	<div class="footer panel-footer">
+		<div class="text-center">
+			<p>Thanks for checking out my website!</p>
+		</div>
+	</div>
 
 
 	
 </body>
-
 </html>
