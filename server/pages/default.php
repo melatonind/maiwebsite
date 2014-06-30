@@ -76,6 +76,66 @@
 	</div>
 </div>
 
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<h2>Blog roll</h2>
+		</div>
+		<div class="col-sm-12 blog">
+			<?php
+				$rss = new DOMDocument();
+				$rss->load('http://meid-up.blogspot.com/feeds/posts/default?alt=rss');
+				$feed = array();
+				foreach ($rss->getElementsByTagName('item') as $node) {
+					$htmlStr = $node->getElementsByTagName('description')->item(0)->nodeValue;
+					$html = new DOMDocument();
+					$html->loadHTML($htmlStr);
+					//get the first image tag from the description HTML
+					$imgTag = $html->getElementsByTagName('img');
+					$img = ($imgTag->length==0)?'noimg.png':$imgTag->item(0)->getAttribute('src');
+					$item = array ( 
+						'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+						'desc' => $node->getElementsByTagName('description')->item(0)->nodeValue,
+						'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+						'date' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
+						'image' => $img,
+						);
+					array_push($feed, $item);
+				}
+				$limit = 3;
+				for($x=0;$x<$limit;$x++) {
+					$title = str_replace(' & ', ' &amp; ', $feed[$x]['title']);
+					$link = $feed[$x]['link'];
+					$img = $feed[$x]['image'];
+					$description = maxWords($feed[$x]['desc'], 100);
+					$date = date('l F d, Y', strtotime($feed[$x]['date']));
+					echo '<div class="col-md-4"><div class="blog-posts">';
+					echo '<small>'.$date.'</small></p>';
+					echo '<p><h4><a href="'.$link.'" title="'.$title.'">'.$title.'</a></h4><br />';
+					echo '<div class="description">';
+					echo '<img class="img-responsive" src="'.$img.'">';
+					echo '<p>'.$description.'</p>';
+					echo '</div>';
+					echo '</div>';
+					echo '<p class="text-center"><a href="'.$link.'" target="_blank">Read more <i class="fa fa-chevron-circle-right a-2x"></i></a></p>';
+					
+					echo '</div>';
+				}
+				
+				function maxWords($textOrHtml, $maxWords) { 
+					$text = strip_tags($textOrHtml, '<p><a><br><ul><li>');
+					$words = preg_split("/\s+/", $text, $maxWords+1); 
+					if (count($words) > $maxWords) { unset($words[$maxWords]); } 
+					$output = join(' ', $words); 
+
+					return $output; 
+				} 
+			
+			?>
+		</div>
+	</div>
+</div>
+
 <div class="container" id="contact">
 	<form role="form">
 	<div class="row">

@@ -1,12 +1,32 @@
 <div class="container main">
 	<div class="row text-center">
-		<h1>Resume</h1>
+		<h1>Résumé</h1>
 	</div>
 	<div class="row">
 		<div class="col-sm-12">
-			
+			<h2>Education</h2>
 		</div>
-		
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+			<img src="assets/images/QUT_Square_CMYK.png" class="img-responsive">
+		</div>
+		<div class="col-sm-8">
+			<p><!-- I spend 4 years studying and this is all that I can come up with??!? -->
+				In 2011, I started at Queensland University of Technology. I initially chose to do a dual degree in <b>Games and Interactive Entertainment</b> / <b>Business</b> which quickly changed to <b>Information Technology</b> / <b>Business</b>.
+			</p>
+			<p>
+				<h4>Information Technology (Software Engineering)</h4>I've worked in multiple teams on various projects spanning many different technologies. In all projects, Agile methodology has been adopted. Along with studying the software engineering stream, I have also taken additional studies in networks and database administration.
+			</p>
+			<p>
+				<h4>Business (Finance)</h4>Throughout my business degree, I have learnt about a lot of basic business concepts that have increased my understanding of the innerworkings of a company. Majoring in Finance has taught me how to evaluate critical financial instruments and its relevant analysis.
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<h2>Experience Timeline</h2>
+		</div>
 	</div>
 </div>
 <div id="timeline-embed"></div>
@@ -17,6 +37,7 @@
 					source:             'https://docs.google.com/spreadsheet/pub?key=0AhImFnLQctHJdE5FWVpTQkZ5SkdjZjZleWlvcE9QN0E&output=html',
 					embed_id:           'timeline-embed',               //OPTIONAL USE A DIFFERENT DIV ID FOR EMBED
 					start_at_end:       true,                            //OPTIONAL START AT SPECIFIC SLIDE
+					start_at_slide:     '7',                            //OPTIONAL START AT SPECIFIC SLIDE
 					start_zoom_adjust:  '1',                            //OPTIONAL TWEAK THE DEFAULT ZOOM LEVEL
 					hash_bookmark:      true,                           //OPTIONAL LOCATION BAR HASHES
 					font:               'Bevan-PotanoSans',             //OPTIONAL FONT
@@ -99,6 +120,12 @@
 			  </tr>
 			  <tr>
 				<th><div class="badge">C</div></th>
+				<td><i class="fa fa-circle"></i></td>
+				<td></td>
+				<td></td>
+			  </tr>
+			  <tr>
+				<th><div class="badge">Obj-C</div></th>
 				<td><i class="fa fa-circle"></i></td>
 				<td></td>
 				<td></td>

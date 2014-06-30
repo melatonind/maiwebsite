@@ -39,7 +39,7 @@
       
       <ul class="nav navbar-nav navbar-right">
 		<li><a href="index.php">Home</a></li>
-        <li><a href="index.php?page=resume">Resume</a></li>
+        <li><a href="index.php?page=resume">Résumé</a></li>
 		<li><a href="index.php?page=blog">Blog</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
